@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 2 Overview | Telematics car driving data analytics</title>
+  <meta name="description" content="The output format is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 2 Overview | Telematics car driving data analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="The output format is bookdown::gitbook." />
+  <meta name="github-repo" content="sxpyggy/Telematics-Analytics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 2 Overview | Telematics car driving data analytics" />
+  
+  <meta name="twitter:description" content="The output format is bookdown::gitbook." />
+  
+
+<meta name="author" content="Guangyuan Gao" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="compulsory-third-party-liability-policies.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Telematics car driving data analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>2</b> Overview</a><ul>
+<li class="chapter" data-level="2.1" data-path="overview.html"><a href="overview.html#vehicle-identification-number-data"><i class="fa fa-check"></i><b>2.1</b> Vehicle identification number data</a></li>
+<li class="chapter" data-level="2.2" data-path="overview.html"><a href="overview.html#policy-data"><i class="fa fa-check"></i><b>2.2</b> Policy data</a></li>
+<li class="chapter" data-level="2.3" data-path="overview.html"><a href="overview.html#claim-data"><i class="fa fa-check"></i><b>2.3</b> Claim data</a></li>
+<li class="chapter" data-level="2.4" data-path="overview.html"><a href="overview.html#telematics-data"><i class="fa fa-check"></i><b>2.4</b> Telematics data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html"><i class="fa fa-check"></i><b>3</b> Compulsory third party liability policies</a><ul>
+<li class="chapter" data-level="3.1" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data cleaning</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#identification-variables"><i class="fa fa-check"></i><b>3.1.1</b> Identification variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#time"><i class="fa fa-check"></i><b>3.1.2</b> Time</a></li>
+<li class="chapter" data-level="3.1.3" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#policy-duration"><i class="fa fa-check"></i><b>3.1.3</b> Policy duration</a></li>
+<li class="chapter" data-level="3.1.4" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#car-features"><i class="fa fa-check"></i><b>3.1.4</b> Car features</a></li>
+<li class="chapter" data-level="3.1.5" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#driver-features"><i class="fa fa-check"></i><b>3.1.5</b> Driver features</a></li>
+<li class="chapter" data-level="3.1.6" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#experience-rating-factors"><i class="fa fa-check"></i><b>3.1.6</b> Experience rating factors</a></li>
+<li class="chapter" data-level="3.1.7" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#other-policy-features"><i class="fa fa-check"></i><b>3.1.7</b> Other policy features</a></li>
+<li class="chapter" data-level="3.1.8" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#claims-features"><i class="fa fa-check"></i><b>3.1.8</b> Claims features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#policies-aggregation-w.r.t-cars"><i class="fa fa-check"></i><b>3.2</b> Policies aggregation w.r.t cars</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="commercial-policies.html"><a href="commercial-policies.html"><i class="fa fa-check"></i><b>4</b> Commercial policies</a><ul>
+<li class="chapter" data-level="4.1" data-path="commercial-policies.html"><a href="commercial-policies.html#data-cleaning-1"><i class="fa fa-check"></i><b>4.1</b> Data cleaning</a></li>
+<li class="chapter" data-level="4.2" data-path="commercial-policies.html"><a href="commercial-policies.html#comparison-of-the-7-coverages"><i class="fa fa-check"></i><b>4.2</b> Comparison of the 7 coverages</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html"><i class="fa fa-check"></i><b>5</b> Telematics car driving data</a><ul>
+<li class="chapter" data-level="5.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#telematics-variables"><i class="fa fa-check"></i><b>5.1</b> Telematics variables</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#field-mask"><i class="fa fa-check"></i><b>5.1.1</b> Field mask</a></li>
+<li class="chapter" data-level="5.1.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#vehicle-identification-variables"><i class="fa fa-check"></i><b>5.1.2</b> Vehicle identification variables</a></li>
+<li class="chapter" data-level="5.1.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#time-1"><i class="fa fa-check"></i><b>5.1.3</b> Time</a></li>
+<li class="chapter" data-level="5.1.4" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#gps-variables"><i class="fa fa-check"></i><b>5.1.4</b> GPS variables</a></li>
+<li class="chapter" data-level="5.1.5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#instrument-panel-variables"><i class="fa fa-check"></i><b>5.1.5</b> Instrument panel variables</a></li>
+<li class="chapter" data-level="5.1.6" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#accelerometer-variables"><i class="fa fa-check"></i><b>5.1.6</b> Accelerometer variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#telematics-data-cleaning"><i class="fa fa-check"></i><b>5.2</b> Telematics data cleaning</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#original-telematics-data"><i class="fa fa-check"></i><b>5.2.1</b> Original telematics data</a></li>
+<li class="chapter" data-level="5.2.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#data-imputation"><i class="fa fa-check"></i><b>5.2.2</b> Data imputation</a></li>
+<li class="chapter" data-level="5.2.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#derived-acceleration-and-angle-change"><i class="fa fa-check"></i><b>5.2.3</b> Derived acceleration and angle change</a></li>
+<li class="chapter" data-level="5.2.4" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#selection-of-telematics-variables"><i class="fa fa-check"></i><b>5.2.4</b> Selection of telematics variables</a></li>
+<li class="chapter" data-level="5.2.5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#saved-telematics-variables"><i class="fa fa-check"></i><b>5.2.5</b> Saved telematics variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#three-formats-of-telematics-data"><i class="fa fa-check"></i><b>5.3</b> Three formats of telematics data</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#time-series-of-individual-trips"><i class="fa fa-check"></i><b>5.3.1</b> Time series of individual trips</a></li>
+<li class="chapter" data-level="5.3.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#summary-statistics-of-telematics-variables"><i class="fa fa-check"></i><b>5.3.2</b> Summary statistics of telematics variables</a></li>
+<li class="chapter" data-level="5.3.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#heatmaps"><i class="fa fa-check"></i><b>5.3.3</b> Heatmaps</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html"><i class="fa fa-check"></i><b>6</b> Claims frequency modeling</a><ul>
+<li class="chapter" data-level="6.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#data-preprocess"><i class="fa fa-check"></i><b>6.1</b> Data preprocess</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#variable-preprocess"><i class="fa fa-check"></i><b>6.1.1</b> Variable preprocess</a></li>
+<li class="chapter" data-level="6.1.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#data-partition"><i class="fa fa-check"></i><b>6.1.2</b> Data partition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalized-linear-model-for-claim-counts"><i class="fa fa-check"></i><b>6.2</b> Generalized linear model for claim counts</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#poisson-deviance-loss-function"><i class="fa fa-check"></i><b>6.2.1</b> Poisson deviance loss function</a></li>
+<li class="chapter" data-level="6.2.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalizd-linear-models"><i class="fa fa-check"></i><b>6.2.2</b> Generalizd linear models</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#improved-glm-with-boosting-methods"><i class="fa fa-check"></i><b>6.3</b> Improved GLM with boosting methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalized-boosted-regression-modeling"><i class="fa fa-check"></i><b>6.3.1</b> Generalized boosted regression modeling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#xgboost"><i class="fa fa-check"></i><b>6.3.2</b> XGBoost</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#improved-glm-with-telematics-individual-trips"><i class="fa fa-check"></i><b>6.4</b> Improved GLM with telematics individual trips</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#selection-of-archetypal-drivers"><i class="fa fa-check"></i><b>6.4.1</b> Selection of archetypal drivers</a></li>
+<li class="chapter" data-level="6.4.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#one-dimensional-convolutional-neural-network"><i class="fa fa-check"></i><b>6.4.2</b> One dimensional convolutional neural network</a></li>
+<li class="chapter" data-level="6.4.3" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#glm-with-trips-scores"><i class="fa fa-check"></i><b>6.4.3</b> GLM with trips scores</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#discussions"><i class="fa fa-check"></i><b>6.5</b> Discussions</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#trips-classification-by-a-logistic-model"><i class="fa fa-check"></i><b>6.5.1</b> Trips classification by a logistic model</a></li>
+<li class="chapter" data-level="6.5.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#competing-methods"><i class="fa fa-check"></i><b>6.5.2</b> Competing methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#sensitivity-analysis-and-conclusions"><i class="fa fa-check"></i><b>6.6</b> Sensitivity analysis and conclusions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/sxpyggy/Telematics-Analytics" target="blank">GitHub repo</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Telematics car driving data analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="overview" class="section level1">
+<h1><span class="header-section-number">Section 2</span> Overview</h1>
+<p>From a Chinese domestic insurance company, we have obtained four data sets: (1) <strong>the vehicle identification number data (VIN data)</strong>, (2) <strong>the policy data</strong>, (3) <strong>the claim data</strong> and (4) <strong>the telematics data</strong>.</p>
+<p>VIN data (1) contains a mapping from the policy code <code>Policy_Code</code> to the vehicle identification numbers <code>Device_ID</code>.
+We use (1) to aggregate policies of the same car driver and to link policy data (2) with telematics data (3).
+We use (2) and (3) to create the claims frequency data.
+For the telematics data (4), more data cleaning and pre-processing are needed.</p>
+<div id="vehicle-identification-number-data" class="section level2">
+<h2><span class="header-section-number">2.1</span> Vehicle identification number data</h2>
+<p>In the VIN data, we have 12196 policies on 2311 cars.
+So averagely one car has bought 5 policies.
+The cars are identified by the vehicle identification numbers (VINs). This data establishes a mapping from the policies to the vehicle identification numbers.</p>
+</div>
+<div id="policy-data" class="section level2">
+<h2><span class="header-section-number">2.2</span> Policy data</h2>
+<p>There are two types of policies: <strong>the compulsory third party liability (CTPL) policies</strong> and <strong>the commercial policies</strong>.
+While a CTPL policy has only one <strong>CTPL coverage</strong>, a commercial policy may have 7 coverages including <strong>third party liability (TPL), property, driver, passengers, theft and robbery (TandR), glass and scratch</strong>.
+We show the range of underwriting dates, policy inception dates and expiration dates in Table <a href="overview.html#tab:dates">2.1</a>.
+Although not indicated by the insurance company,
+the observation period should be from 2014-01-01 to 2017-06-30.</p>
+<p>After removing the policies with zero premium, there are 6032 CTPL policies and 6005 commercial policies on the 2311 cars of the VIN data.
+Note that 159 policies in the VIN data are missed in the policy data. Also note that those numbers may change during the data cleaning.
+The collecting information for the two types of policies are different. In the next two chapters, we will discuss the two types of policies separately.</p>
+</div>
+<div id="claim-data" class="section level2">
+<h2><span class="header-section-number">2.3</span> Claim data</h2>
+<p>There are 1031 CTPL policies and 1690 commercial policies having made at least one claim.
+In the claim data, we have 1204 CTPL claims, and 2218 commercial claims.
+Note that most policies do not incur a claim and a policy can incur more than one claims.
+A CTPL claim contains only the CTPL coverage, while a commercial claim may contain up to 7 coverages.</p>
+<p>We provide the range of accident dates, reporting dates and claim closure dates in Table <a href="overview.html#tab:dates">2.1</a>. The exposure period should be from 2014-01-01 to 2017-06-30. Note that 28 claims are still open on 2017-06-30.</p>
+<table>
+<caption><span id="tab:dates">Table 2.1: </span>The range of underwriting dates (<code>UNDERWRITEENDATE</code>), policy inception dates (<code>KINDSTARTDATE</code>), policy expiration dates (<code>DUEENDDATE</code>), accident dates (<code>DAMAGEDATE</code>), reporting dates (<code>REPORTDATE</code>) and the claim closure dates (<code>ENDCASEDATE</code>)</caption>
+<thead>
+<tr class="header">
+<th align="left">dates</th>
+<th align="left">min</th>
+<th align="left">max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">UNDERWRITEENDDATE</td>
+<td align="left">2013-10-19</td>
+<td align="left">2017-06-30</td>
+</tr>
+<tr class="even">
+<td align="left">KINDSTARTDATE</td>
+<td align="left">2014-01-01</td>
+<td align="left">2017-09-25</td>
+</tr>
+<tr class="odd">
+<td align="left">DUEENDDATE</td>
+<td align="left">2014-03-22</td>
+<td align="left">2018-09-24</td>
+</tr>
+<tr class="even">
+<td align="left">DAMAGEDATE</td>
+<td align="left">2014-01-09</td>
+<td align="left">2017-06-29</td>
+</tr>
+<tr class="odd">
+<td align="left">REPORTDATE</td>
+<td align="left">2014-01-09</td>
+<td align="left">2017-06-30</td>
+</tr>
+<tr class="even">
+<td align="left">ENDCASEDATE</td>
+<td align="left">2014-01-20</td>
+<td align="left">2017-06-30</td>
+</tr>
+</tbody>
+</table>
+<p>Table <a href="overview.html#tab:zero-claim">2.2</a> shows the number of claims for each coverage. We also calculate the proportions of zero claims for each coverage.
+<strong>Note that a large proportion of claims incurring the TPL coverage have zero TPL claims.</strong>
+Note that a claim incurring zero TPL claim does not necessarily incur zero claims for other coverages.</p>
+<table>
+<caption><span id="tab:zero-claim">Table 2.2: </span>The proportions of zero incurred claims</caption>
+<thead>
+<tr class="header">
+<th align="left">coverages</th>
+<th align="right">claims counts</th>
+<th align="right">zero claims</th>
+<th align="right">proportions of zero claims</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">CTPL</td>
+<td align="right">1204</td>
+<td align="right">57</td>
+<td align="right">0.05</td>
+</tr>
+<tr class="even">
+<td align="left">TPL</td>
+<td align="right">1041</td>
+<td align="right">775</td>
+<td align="right">0.74</td>
+</tr>
+<tr class="odd">
+<td align="left">property</td>
+<td align="right">1774</td>
+<td align="right">236</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="even">
+<td align="left">driver</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0.50</td>
+</tr>
+<tr class="odd">
+<td align="left">passengers</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">TandR</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="odd">
+<td align="left">glass</td>
+<td align="right">34</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">scratch</td>
+<td align="right">21</td>
+<td align="right">0</td>
+<td align="right">0.00</td>
+</tr>
+</tbody>
+</table>
+<p>We calculate the reporting delay (report date - damage date) and payment delay (endcase date - report date) for each coverage in Table <a href="overview.html#tab:delay">2.3</a>. Note that 99% claims are reported within one week.</p>
+<table>
+<caption><span id="tab:delay">Table 2.3: </span>The 99% quantiles of reporting delay and payment delay.</caption>
+<thead>
+<tr class="header">
+<th align="left">coverages</th>
+<th align="right">Delay_Report</th>
+<th align="right">Delay_Payment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">CTPL</td>
+<td align="right">4</td>
+<td align="right">194</td>
+</tr>
+<tr class="even">
+<td align="left">TPL</td>
+<td align="right">4</td>
+<td align="right">209</td>
+</tr>
+<tr class="odd">
+<td align="left">property</td>
+<td align="right">3</td>
+<td align="right">145</td>
+</tr>
+<tr class="even">
+<td align="left">driver</td>
+<td align="right">0</td>
+<td align="right">34</td>
+</tr>
+<tr class="odd">
+<td align="left">passengers</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">TandR</td>
+<td align="right">0</td>
+<td align="right">64</td>
+</tr>
+<tr class="odd">
+<td align="left">glass</td>
+<td align="right">3</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="left">scratch</td>
+<td align="right">2</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>A question of interest is whether policyholders tend to file a claim at the end of policy duration. We draw the histogram of the days between the reporting and the expiration for three main coverages in Figure <a href="overview.html#fig:report-expiration">2.1</a>. <strong>Hence, policyholders do not tend to file a claim at the end of policy duration.</strong></p>
+<div class="figure"><span id="fig:report-expiration"></span>
+<img src="1_summary_files/figure-html/report-expiration-1.png" alt="The histograms of the days between the reporting and the expiration" width="672" />
+<p class="caption">
+Figure 2.1: The histograms of the days between the reporting and the expiration
+</p>
+</div>
+</div>
+<div id="telematics-data" class="section level2">
+<h2><span class="header-section-number">2.4</span> Telematics data</h2>
+<p>The telematics data is zipped by days from 2015/04/26 to 2017/07/08, i.e., a zipped folder contains all the trips of all the cars on that day.
+The daily telematics volume after 2015/08/13 is around 40 folds than that before 2015/08/13. The reason is that there is device installing rush in 2015/07/08. We save the telematics data before 2015/08/13 to the address <code>./telematics_data/Incomplete_before_2015_08_13/SUNSJRN_Date.00.zip</code>.
+We also have the <em>summary data</em> and <em>event data</em> for all the trips grouped by days. The <em>summary data</em> is used to validate the detailed telematics data and the <em>event data</em> records the pre-defined abnormal car moving events. We do not study these two data sets furthermore.</p>
+<p>To be consistent with the claims frequency data where each row is for a policy, we group the telematics data by policies. We focus on the telematics data for <strong>the compulsory policies</strong>.</p>
+<p>We create a car folder <code>Device_ID</code> for each car and in this car folder we create a policy folder <code>Policy_Code</code> for each policy of this car.
+We extract all the trips of this car during this policy effective period, and save them into the corresponding policy folder (i.e., in the address of <code>./telematics_data/compulsory_car/Device_ID/Policy_Code/Device_ID_Trip_Number.csv</code>). Note that a trip file is named as <code>Device_ID_Trip_Number.csv</code>. We will explain the <code>Trip_Number</code> later.
+We save the trips not in any policies in a folder of <code>other_trips</code> under the car folder (i.e., in the address of <code>./telematics_data/compulsory_car/Device_ID/other_trips/Device_ID_Trip_Number.csv</code>).</p>
+<p>We have 2296 cars with compulsory policies, in which 2131 cars have telematics data and 165 cars have no telematics data (i.e., 7% car folders <code>./telematics_data/compulsory_car/Device_ID/</code> contain zero telematics files).
+There are 1527 <em>policies</em> having no telematics data, amounting for 26% of the total 5904 policies. The reason of this high missing percentage is that the policies’ effective dates are ranging from 2014-01-01 to 2017-06-25 but <strong>the telematics data is available for a shorter period from 2015/08/13 to 2017/07/08.</strong></p>
+<p><strong>Therefore it is better to work on the aggregated policy data on cars.</strong>
+During the aggregation, we need to consider the change of driver which actually rarely happen. By working on the aggregated policies on cars, we effectively interpolate the telematics covariates for policies before 2015-08-13 and only 7% cars miss the telematics covariates.</p>
+<p>Not all the car driving trips during the policy effective period are recorded, since the telematics data collecting devices may be installed anytime during the policy effective period. Therefore it is difficult to calculate the total driving distance during a policy period. <strong>We will use average driving distance per day or average driving time per day instead.</strong></p>
+<p>In the following, we draw the distribution of trips: (top-left) the total trips per car with CTPL policies; (top-right) the trips per CTPL policy; (bottom-left) the trips per car with CTPL policies during no CTPL policies period; (bottom-right) the trips per car without CTPL policies.</p>
+<div class="figure" style="text-align: center"><span id="fig:tele-summary"></span>
+<img src="plots/telematics_summary.png" alt="The distribution of number of trips" width="80%" />
+<p class="caption">
+Figure 2.2: The distribution of number of trips
+</p>
+</div>
+<p>The telematics data of the 1541 cars without compulsory policies is saved in the folder <code>./telematics_data/non_CTP_trips</code> with the sub-folders <code>/Device_ID/Device_ID_Trip_Number.csv</code> denoting the cars.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="compulsory-third-party-liability-policies.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": "github"
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

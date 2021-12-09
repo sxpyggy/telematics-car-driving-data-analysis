@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 6 Claims frequency modeling | Telematics car driving data analytics</title>
+  <meta name="description" content="The output format is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 6 Claims frequency modeling | Telematics car driving data analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="The output format is bookdown::gitbook." />
+  <meta name="github-repo" content="sxpyggy/Telematics-Analytics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 6 Claims frequency modeling | Telematics car driving data analytics" />
+  
+  <meta name="twitter:description" content="The output format is bookdown::gitbook." />
+  
+
+<meta name="author" content="Guangyuan Gao" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="telematics-car-driving-data.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Telematics car driving data analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>2</b> Overview</a><ul>
+<li class="chapter" data-level="2.1" data-path="overview.html"><a href="overview.html#vehicle-identification-number-data"><i class="fa fa-check"></i><b>2.1</b> Vehicle identification number data</a></li>
+<li class="chapter" data-level="2.2" data-path="overview.html"><a href="overview.html#policy-data"><i class="fa fa-check"></i><b>2.2</b> Policy data</a></li>
+<li class="chapter" data-level="2.3" data-path="overview.html"><a href="overview.html#claim-data"><i class="fa fa-check"></i><b>2.3</b> Claim data</a></li>
+<li class="chapter" data-level="2.4" data-path="overview.html"><a href="overview.html#telematics-data"><i class="fa fa-check"></i><b>2.4</b> Telematics data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html"><i class="fa fa-check"></i><b>3</b> Compulsory third party liability policies</a><ul>
+<li class="chapter" data-level="3.1" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data cleaning</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#identification-variables"><i class="fa fa-check"></i><b>3.1.1</b> Identification variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#time"><i class="fa fa-check"></i><b>3.1.2</b> Time</a></li>
+<li class="chapter" data-level="3.1.3" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#policy-duration"><i class="fa fa-check"></i><b>3.1.3</b> Policy duration</a></li>
+<li class="chapter" data-level="3.1.4" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#car-features"><i class="fa fa-check"></i><b>3.1.4</b> Car features</a></li>
+<li class="chapter" data-level="3.1.5" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#driver-features"><i class="fa fa-check"></i><b>3.1.5</b> Driver features</a></li>
+<li class="chapter" data-level="3.1.6" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#experience-rating-factors"><i class="fa fa-check"></i><b>3.1.6</b> Experience rating factors</a></li>
+<li class="chapter" data-level="3.1.7" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#other-policy-features"><i class="fa fa-check"></i><b>3.1.7</b> Other policy features</a></li>
+<li class="chapter" data-level="3.1.8" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#claims-features"><i class="fa fa-check"></i><b>3.1.8</b> Claims features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#policies-aggregation-w.r.t-cars"><i class="fa fa-check"></i><b>3.2</b> Policies aggregation w.r.t cars</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="commercial-policies.html"><a href="commercial-policies.html"><i class="fa fa-check"></i><b>4</b> Commercial policies</a><ul>
+<li class="chapter" data-level="4.1" data-path="commercial-policies.html"><a href="commercial-policies.html#data-cleaning-1"><i class="fa fa-check"></i><b>4.1</b> Data cleaning</a></li>
+<li class="chapter" data-level="4.2" data-path="commercial-policies.html"><a href="commercial-policies.html#comparison-of-the-7-coverages"><i class="fa fa-check"></i><b>4.2</b> Comparison of the 7 coverages</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html"><i class="fa fa-check"></i><b>5</b> Telematics car driving data</a><ul>
+<li class="chapter" data-level="5.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#telematics-variables"><i class="fa fa-check"></i><b>5.1</b> Telematics variables</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#field-mask"><i class="fa fa-check"></i><b>5.1.1</b> Field mask</a></li>
+<li class="chapter" data-level="5.1.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#vehicle-identification-variables"><i class="fa fa-check"></i><b>5.1.2</b> Vehicle identification variables</a></li>
+<li class="chapter" data-level="5.1.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#time-1"><i class="fa fa-check"></i><b>5.1.3</b> Time</a></li>
+<li class="chapter" data-level="5.1.4" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#gps-variables"><i class="fa fa-check"></i><b>5.1.4</b> GPS variables</a></li>
+<li class="chapter" data-level="5.1.5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#instrument-panel-variables"><i class="fa fa-check"></i><b>5.1.5</b> Instrument panel variables</a></li>
+<li class="chapter" data-level="5.1.6" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#accelerometer-variables"><i class="fa fa-check"></i><b>5.1.6</b> Accelerometer variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#telematics-data-cleaning"><i class="fa fa-check"></i><b>5.2</b> Telematics data cleaning</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#original-telematics-data"><i class="fa fa-check"></i><b>5.2.1</b> Original telematics data</a></li>
+<li class="chapter" data-level="5.2.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#data-imputation"><i class="fa fa-check"></i><b>5.2.2</b> Data imputation</a></li>
+<li class="chapter" data-level="5.2.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#derived-acceleration-and-angle-change"><i class="fa fa-check"></i><b>5.2.3</b> Derived acceleration and angle change</a></li>
+<li class="chapter" data-level="5.2.4" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#selection-of-telematics-variables"><i class="fa fa-check"></i><b>5.2.4</b> Selection of telematics variables</a></li>
+<li class="chapter" data-level="5.2.5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#saved-telematics-variables"><i class="fa fa-check"></i><b>5.2.5</b> Saved telematics variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#three-formats-of-telematics-data"><i class="fa fa-check"></i><b>5.3</b> Three formats of telematics data</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#time-series-of-individual-trips"><i class="fa fa-check"></i><b>5.3.1</b> Time series of individual trips</a></li>
+<li class="chapter" data-level="5.3.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#summary-statistics-of-telematics-variables"><i class="fa fa-check"></i><b>5.3.2</b> Summary statistics of telematics variables</a></li>
+<li class="chapter" data-level="5.3.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#heatmaps"><i class="fa fa-check"></i><b>5.3.3</b> Heatmaps</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html"><i class="fa fa-check"></i><b>6</b> Claims frequency modeling</a><ul>
+<li class="chapter" data-level="6.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#data-preprocess"><i class="fa fa-check"></i><b>6.1</b> Data preprocess</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#variable-preprocess"><i class="fa fa-check"></i><b>6.1.1</b> Variable preprocess</a></li>
+<li class="chapter" data-level="6.1.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#data-partition"><i class="fa fa-check"></i><b>6.1.2</b> Data partition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalized-linear-model-for-claim-counts"><i class="fa fa-check"></i><b>6.2</b> Generalized linear model for claim counts</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#poisson-deviance-loss-function"><i class="fa fa-check"></i><b>6.2.1</b> Poisson deviance loss function</a></li>
+<li class="chapter" data-level="6.2.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalizd-linear-models"><i class="fa fa-check"></i><b>6.2.2</b> Generalizd linear models</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#improved-glm-with-boosting-methods"><i class="fa fa-check"></i><b>6.3</b> Improved GLM with boosting methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalized-boosted-regression-modeling"><i class="fa fa-check"></i><b>6.3.1</b> Generalized boosted regression modeling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#xgboost"><i class="fa fa-check"></i><b>6.3.2</b> XGBoost</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#improved-glm-with-telematics-individual-trips"><i class="fa fa-check"></i><b>6.4</b> Improved GLM with telematics individual trips</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#selection-of-archetypal-drivers"><i class="fa fa-check"></i><b>6.4.1</b> Selection of archetypal drivers</a></li>
+<li class="chapter" data-level="6.4.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#one-dimensional-convolutional-neural-network"><i class="fa fa-check"></i><b>6.4.2</b> One dimensional convolutional neural network</a></li>
+<li class="chapter" data-level="6.4.3" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#glm-with-trips-scores"><i class="fa fa-check"></i><b>6.4.3</b> GLM with trips scores</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#discussions"><i class="fa fa-check"></i><b>6.5</b> Discussions</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#trips-classification-by-a-logistic-model"><i class="fa fa-check"></i><b>6.5.1</b> Trips classification by a logistic model</a></li>
+<li class="chapter" data-level="6.5.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#competing-methods"><i class="fa fa-check"></i><b>6.5.2</b> Competing methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#sensitivity-analysis-and-conclusions"><i class="fa fa-check"></i><b>6.6</b> Sensitivity analysis and conclusions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/sxpyggy/Telematics-Analytics" target="blank">GitHub repo</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Telematics car driving data analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="claims-frequency-modeling" class="section level1">
+<h1><span class="header-section-number">Section 6</span> Claims frequency modeling</h1>
+<p>We consider the claims history of 1847 cars whose exposure is ranging from 1 to 3.48.
+Those cars have more than 100 and at most 500 concatenated trips of 5 minutes (see the previous section).
+Note that 1598 drivers have 500 telematics trips.
+We show the distribution of claims number and exposures in Figure <a href="claims-frequency-modeling.html#fig:claims-plot">6.1</a>. We observe that most drivers do not have a claim. The total claims number is 933 and the total exposures is 4215. The empirical claims frequency is 22.14% per driver per year.</p>
+<div class="figure" style="text-align: center"><span id="fig:claims-plot"></span>
+<img src="plots/5/claim_number.png" alt="The distributrion of claims number and exposures" width="40%" /><img src="plots/5/exposure.png" alt="The distributrion of claims number and exposures" width="40%" />
+<p class="caption">
+Figure 6.1: The distributrion of claims number and exposures
+</p>
+</div>
+<p><strong>Remark</strong>: Our preliminary data cleaning ensures that the main driver of a car does not change over the entire observation period and we concatenate policy renewals of the same driver over this observation period.
+Thus, we can follow the same driver for at most 3 years and 5 months from 01/01/2014 to 31/05/2017.</p>
+<p><strong>Remark</strong>: We follow insurance policies over multiple years, but only for the most recent periods there is telematics data available. For this reason, we typically have a longer observation period of claims history on insurance policies than of corresponding telematics data.
+An implicit assumption is that the driving habits and styles in the most recent periods are good representations for the entire observation period of insurance exposure.</p>
+<div id="data-preprocess" class="section level2">
+<h2><span class="header-section-number">6.1</span> Data preprocess</h2>
+<p>We have discussed the telematics car driving data in the previous section.
+Here we provide a summary description of the available actuarial risk factors and partition the portfolio to facilitate the out-of-sample prediction.</p>
+<div id="variable-preprocess" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Variable preprocess</h3>
+<p>The available actuarial risk factors are <code>regions, driver's age, driver's gender, car brand, car's age, seat count and car's price</code>. We preprocess them as follows:</p>
+<ul>
+<li><code>regions</code>: There are three main regions, Hebei Province, Zhejiang Province and Shanghai, which have accounted to 97.67% of total cars.
+Hence, we merge the regions not in the three main regions. The distribution of exposures in those four regions is shown in Figure <a href="claims-frequency-modeling.html#fig:region-plot">6.2</a>.</li>
+</ul>
+<p>Note that one may create a continuous variable of population density of each region. The population density should be a factor affecting the claims frequency, since it is related to the traffic density.</p>
+<div class="figure" style="text-align: center"><span id="fig:region-plot"></span>
+<img src="plots/5/regions.png" alt="The distribution of exposures across the regions." width="40%" />
+<p class="caption">
+Figure 6.2: The distribution of exposures across the regions.
+</p>
+</div>
+<ul>
+<li><p><code>driver's age</code>: We discretize driver’s age into five groups using a marginal Poisson regression tree model.
+The cut-off values of age are 29, 33, 35, 45.
+Note that we try to obtain a finer grouping of age and merge age groups during the variable selection.
+Figure <a href="claims-frequency-modeling.html#fig:age-plot">6.3</a> shows the (marginal) Poisson tree and the distribution of exposures across the age groups.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">age group</th>
+<th align="center">age interval</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">young</td>
+<td align="center"><span class="math inline">\([18,29)\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">middle1</td>
+<td align="center"><span class="math inline">\([29,33)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">middle2</td>
+<td align="center"><span class="math inline">\([33,35)\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">mature1</td>
+<td align="center"><span class="math inline">\([35,45)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">mature2</td>
+<td align="center"><span class="math inline">\([45,100)\)</span></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:age-plot"></span>
+<img src="plots/5/age_tree.png" alt="The marginal Poisson tree and the distribution of exposures across the age groups." width="40%" /><img src="plots/5/age.png" alt="The marginal Poisson tree and the distribution of exposures across the age groups." width="40%" />
+<p class="caption">
+Figure 6.3: The marginal Poisson tree and the distribution of exposures across the age groups.
+</p>
+</div>
+<ul>
+<li><code>gender</code>: Male drivers are almost as double as female ones as shown in Figure <a href="claims-frequency-modeling.html#fig:gender-plot">6.4</a>.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:gender-plot"></span>
+<img src="plots/5/sex.png" alt="The distribution of exposures across the gender" width="40%" />
+<p class="caption">
+Figure 6.4: The distribution of exposures across the gender
+</p>
+</div>
+<ul>
+<li><code>car brand</code>: There are 66 different car brands.
+However, most car brands contain very few cars. We aggregate the car brand according to its made country.
+Thus we group the cars into made in Germany, Japan, China, US, Korean and Europe (except of Germany).
+Figure <a href="claims-frequency-modeling.html#fig:car-plot">6.5</a> shows the distribution of exposures across the car made countries.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:car-plot"></span>
+<img src="plots/5/car.png" alt="The distribution of exposure across car made countries." width="40%" />
+<p class="caption">
+Figure 6.5: The distribution of exposure across car made countries.
+</p>
+</div>
+<ul>
+<li><code>car's age</code>: For the car’s age, we show its distribution in Figure <a href="claims-frequency-modeling.html#fig:car-age-plot">6.6</a>.
+<!-- There are few cars used for more than useyear_cap years. -->
+<!-- Thus we create a new variable `capped car's age` which caps car's age by useyear_cap. -->
+A preliminary analysis shows that the claims frequency is related with car’s age log-linearly. So we do not need to discretize it.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:car-age-plot"></span>
+<img src="plots/5/useyears.png" alt="The histogram of car's age" width="40%" />
+<p class="caption">
+Figure 6.6: The histogram of car’s age
+</p>
+</div>
+<ul>
+<li><code>seat count</code>: Around 95.67% cars have 5 seats as shown in Figure <a href="claims-frequency-modeling.html#fig:seat-plot">6.7</a>. So this variable is not quite useful for claims frequency prediction.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:seat-plot"></span>
+<img src="plots/5/seat.png" alt="The distribution of exposure across seat count." width="40%" />
+<p class="caption">
+Figure 6.7: The distribution of exposure across seat count.
+</p>
+</div>
+<ul>
+<li><code>car's price</code>: We take the logarithm of car’s price. The distribution of the car’s price in logarithm is shown in Figure <a href="claims-frequency-modeling.html#fig:car-price-plot">6.8</a>.
+A preliminary analysis (using tree, GAM, and GLM) shows that this variable doesn’t have a close relationship with claims frequency (marginally).</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:car-price-plot"></span>
+<img src="plots/5/price.png" alt="The histogram of car's price" width="40%" />
+<p class="caption">
+Figure 6.8: The histogram of car’s price
+</p>
+</div>
+<ul>
+<li><code>average daily distance</code>: We fit a (marginal) generalized additive model to investigate the non-linear effect of average daily distance on claims frequency.
+The left plot in Figure <a href="claims-frequency-modeling.html#fig:daily-D">6.9</a> shows that we most of the logged daily distance are between 2.5 and 4.5.
+Moreover, if we truncate the logged daily distance at 2.5 and 4.5, we will get a linear effect of logged daily distance on claims frequency.
+The right plot in Figure <a href="claims-frequency-modeling.html#fig:daily-D">6.9</a> confirms our propose and in the following GLM we will use the truncated logged daily distance.
+Figure <a href="claims-frequency-modeling.html#fig:daily-hist">6.10</a> compares the distributions of the orginal variable and the truncated variable.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:daily-D"></span>
+<img src="plots/5/daily_D.png" alt="The effect of logged daily distance on claims frequency." width="80%" />
+<p class="caption">
+Figure 6.9: The effect of logged daily distance on claims frequency.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:daily-hist"></span>
+<img src="plots/5/log_D.png" alt="The distribution of logged daily distance." width="80%" />
+<p class="caption">
+Figure 6.10: The distribution of logged daily distance.
+</p>
+</div>
+</div>
+<div id="data-partition" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Data partition</h3>
+<p>We will compare models in terms of out-of-sample prediction.
+Stratified split (w.r.t. claims numbers) is used to partition the data into train, validation, and test data sets (<span class="math inline">\(0.6:0.2:0.2\)</span>). The exposures, the claims number, and the claims frequency of each data set are listed in Table <a href="claims-frequency-modeling.html#tab:data-split-info">6.1</a>. We denote the index of each data set <span class="math inline">\(\mathcal{D}_\text{train}, \mathcal{D}_\text{validation}, \mathcal{D}_\text{test}\)</span> by <span class="math inline">\(\mathcal{I}_\text{train},\mathcal{I}_\text{validation},\mathcal{I}_\text{test}\)</span> and <span class="math inline">\(\mathcal{I}_\text{learn}=\mathcal{I}_\text{train}\cup\mathcal{I}_\text{validation}\)</span>.</p>
+<table>
+<caption><span id="tab:data-split-info">Table 6.1: </span>Data partitions</caption>
+<thead>
+<tr class="header">
+<th align="left">data</th>
+<th align="right">cars</th>
+<th align="right">exposure</th>
+<th align="right">claims</th>
+<th align="right">frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">train</td>
+<td align="right">1104</td>
+<td align="right">2522</td>
+<td align="right">552</td>
+<td align="right">0.2189</td>
+</tr>
+<tr class="even">
+<td align="left">validation</td>
+<td align="right">372</td>
+<td align="right">843</td>
+<td align="right">192</td>
+<td align="right">0.2279</td>
+</tr>
+<tr class="odd">
+<td align="left">test</td>
+<td align="right">371</td>
+<td align="right">850</td>
+<td align="right">189</td>
+<td align="right">0.2223</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="generalized-linear-model-for-claim-counts" class="section level2">
+<h2><span class="header-section-number">6.2</span> Generalized linear model for claim counts</h2>
+<p>Generally we assume the claims number <span class="math inline">\(N_i\)</span> follows a Poisson distribution with mean of <span class="math inline">\(e_i\lambda(\boldsymbol{x}_i)\)</span>
+<span class="math display">\[N_i~ \overset{ind}{\sim}~ \text{Poi} (e_i\lambda(\boldsymbol{x}_i)),\]</span></p>
+<p>where <span class="math inline">\(e_i\)</span> is the exposure and <span class="math inline">\(\lambda(\boldsymbol{x}_i)\)</span> is the estimated claims frequency per driver per year given the risk factors <span class="math inline">\(\boldsymbol{x}_i\in \mathcal{X}\)</span>. The function <span class="math inline">\(\lambda\)</span> is a mapping from the risk factors to the claims frequency:
+<span class="math display">\[\lambda: \mathcal{X} \rightarrow \mathbb{R}_+, ~~ \boldsymbol{x}\mapsto \lambda(\boldsymbol{x}).\]</span></p>
+<p>We first establish the base line GLM for claim counts with <span class="math inline">\(\lambda\)</span> as a linear function. Then in the next two sections, we improve it by either relaxing the linear function <span class="math inline">\(\lambda\)</span> or introducing telematics covariates to expand the covariate space <span class="math inline">\(\mathcal{X}\)</span>.</p>
+<div id="poisson-deviance-loss-function" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Poisson deviance loss function</h3>
+<p>It is natural to use the Poisson deviance loss function to compare the prediction performance of different models. The out-of-sample Poisson deviance loss on the data <span class="math inline">\(\mathcal{D}_\text{test}\)</span> is defined as:</p>
+<p><span class="math display">\[\mathcal{L}(\hat{\lambda},\mathcal{D}_\text{test})=\frac{2}{|\mathcal{D}_\text{test}|}\sum_{i \in \mathcal{I}_\text{test}}\left(e_i\hat{\lambda}(\boldsymbol{x}_i) - N_i -N_i \ln e_i\hat{\lambda}(\boldsymbol{x}_i) + N_i\ln N_i \right).\]</span></p>
+<p>Normally, the mapping <span class="math inline">\(\hat{\lambda}\)</span> contains the estimated parameters using the training data <span class="math inline">\(\mathcal{D}_\text{train}\)</span> (or the learning data <span class="math inline">\(\mathcal{D}_\text{learn}\)</span> in GLM).</p>
+<!-- Hence, if $\mathcal{D}=\mathcal{D}_\text{train}$ the above defines an in-sample loss of training loss and if  $\mathcal{D}=\mathcal{D}_\text{test}$ the above defines an out-of-sample loss of test loss. We will evaluate the predictive performances of models by comparing test loss.  -->
+</div>
+<div id="generalizd-linear-models" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Generalizd linear models</h3>
+<p>We begin with the golden standard model of generalized linear model. The GLM assumes the following linear mapping:</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\ln \lambda^{\text{(GLM)}}(\boldsymbol{x})=&amp;\beta_0+\alpha_\text{region}+\gamma_\text{age_group}+\zeta_\text{female}+  \delta_\text{car_made}+\\
+&amp;\beta_1\text{car_age}+\beta_2\text{logged_daily_distance},
+\end{aligned}
+\end{equation}\]</span>
+where we assume Zhejiang Province, middle age 1, female, Germany made car as the reference levels, and we have discretized the age in order to obtain the log-linear effects.
+Note that we estimate the coefficients using the learning data <span class="math inline">\(\mathcal{D}_\text{learn}\)</span>.</p>
+<p>We then perform a step-wise variable selection according to AIC. The final model is selected as follows:</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\ln \lambda^{\text{(GLM)}}(\boldsymbol{x})=&amp;\beta_0+\alpha_\text{hebei}+\gamma_\text{young}+\gamma_\text{middle1}+\gamma_\text{mature2}+\delta_\text{china}+\delta_\text{eu}+\\
+&amp;\beta_1\text{car_age}+\beta_2\text{logged_daily_distance},
+\end{aligned}
+\end{equation}\]</span></p>
+<p>Hence, we have merged Shanghai Province and other regions with Zhejiang Province, middle age 2 with mature age 1, and all the car mades with Germany made except China and Europea.
+We have removed the gender and the car’s price.
+We get the test error as <span class="math inline">\(1.0306\)</span>. Note that test error of homogeneous model is <span class="math inline">\(1.1003\)</span>.</p>
+</div>
+</div>
+<div id="improved-glm-with-boosting-methods" class="section level2">
+<h2><span class="header-section-number">6.3</span> Improved GLM with boosting methods</h2>
+<p>Next we explore the possibility of improving GLM using either the <em>generalized boosted regression model</em> or the <em>XGBoost</em>. The mapping <span class="math inline">\(\lambda\)</span> from actuarial risk models to claims frequency is assumed as follows:</p>
+<p><span class="math display">\[\ln \lambda(\boldsymbol{x})= \ln {\lambda}^\text{(GLM)}(\boldsymbol{x}) + \ln {\lambda}^\text{(BST)}(\boldsymbol{x}).\]</span></p>
+<p>With the above structure, we can explore the non-linear effects and the interaction effect which are omitted in the GLM. We include the region, driver’s age (continuous variable), gender, car made, car’s age and (logged) car’s price into the boosting model <span class="math inline">\(\lambda^{\text{(BST)}}\)</span>.</p>
+<div id="generalized-boosted-regression-modeling" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Generalized boosted regression modeling</h3>
+<p>The R code of generalized boosted regression model is shown as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="claims-frequency-modeling.html#cb1-1"></a><span class="kw">set.seed</span>(<span class="dv">7</span>)</span>
+<span id="cb1-2"><a href="claims-frequency-modeling.html#cb1-2"></a>gbm1 &lt;-</span>
+<span id="cb1-3"><a href="claims-frequency-modeling.html#cb1-3"></a><span class="st">  </span><span class="kw">gbm</span>(</span>
+<span id="cb1-4"><a href="claims-frequency-modeling.html#cb1-4"></a>    Claim_Count <span class="op">~</span><span class="st">  </span>BRANCHNAME <span class="op">+</span><span class="st">  </span>AGE <span class="op">+</span><span class="st"> </span>AGE_G <span class="op">+</span><span class="st"> </span>SEX <span class="op">+</span></span>
+<span id="cb1-5"><a href="claims-frequency-modeling.html#cb1-5"></a><span class="st">      </span>Car_Made <span class="op">+</span><span class="st"> </span>USEYEARS <span class="op">+</span><span class="st"> </span>Price_log <span class="op">+</span><span class="st"> </span></span>
+<span id="cb1-6"><a href="claims-frequency-modeling.html#cb1-6"></a><span class="st">      </span>Daily_log <span class="op">+</span><span class="st"> </span>Daily_Tlog <span class="op">+</span><span class="st">  </span><span class="kw">offset</span>(<span class="kw">log</span>(Fit_GLM)),</span>
+<span id="cb1-7"><a href="claims-frequency-modeling.html#cb1-7"></a>    <span class="dt">data =</span> <span class="kw">rbind</span>(train_data, valid_data),</span>
+<span id="cb1-8"><a href="claims-frequency-modeling.html#cb1-8"></a>    <span class="dt">distribution =</span> <span class="st">&quot;poisson&quot;</span>,</span>
+<span id="cb1-9"><a href="claims-frequency-modeling.html#cb1-9"></a>    <span class="dt">shrinkage =</span> <span class="fl">0.001</span>,</span>
+<span id="cb1-10"><a href="claims-frequency-modeling.html#cb1-10"></a>    <span class="dt">n.trees =</span> <span class="dv">100</span>,</span>
+<span id="cb1-11"><a href="claims-frequency-modeling.html#cb1-11"></a>    <span class="dt">interaction.depth =</span> <span class="dv">1</span>,</span>
+<span id="cb1-12"><a href="claims-frequency-modeling.html#cb1-12"></a>    <span class="dt">n.minobsinnode =</span> <span class="dv">100</span>,</span>
+<span id="cb1-13"><a href="claims-frequency-modeling.html#cb1-13"></a>    <span class="dt">bag.fraction =</span> <span class="fl">0.5</span>,</span>
+<span id="cb1-14"><a href="claims-frequency-modeling.html#cb1-14"></a>    <span class="dt">train.fraction =</span> <span class="kw">nrow</span>(train_data) <span class="op">/</span><span class="st"> </span><span class="kw">nrow</span>(learn_data),</span>
+<span id="cb1-15"><a href="claims-frequency-modeling.html#cb1-15"></a>    <span class="dt">cv.folds =</span> <span class="dv">0</span>,</span>
+<span id="cb1-16"><a href="claims-frequency-modeling.html#cb1-16"></a>    <span class="dt">verbose =</span> T</span>
+<span id="cb1-17"><a href="claims-frequency-modeling.html#cb1-17"></a>  )</span>
+<span id="cb1-18"><a href="claims-frequency-modeling.html#cb1-18"></a>(best.iter &lt;-<span class="st"> </span><span class="kw">gbm.perf</span>(gbm1, <span class="dt">method =</span> <span class="st">&quot;test&quot;</span>))</span>
+<span id="cb1-19"><a href="claims-frequency-modeling.html#cb1-19"></a>gbm1<span class="op">$</span>valid.error[best.iter]</span></code></pre></div>
+<p>The code is self explained. And we add illustrations of important arguments:</p>
+<ul>
+<li><p><code>offset(log(Fit_GLM))</code> indicates that the GBM starts boosting from the GLM prediction of claims number <span class="math inline">\(\ln e \hat{\lambda}^{\text{(GLM)}}\)</span>. Hence we explore the area which is not explored by the GLM.</p></li>
+<li><p><code>n.trees</code> is the number of iterations (trees) we tend to boost. <code>shrinkage</code> is the learning step. Normally, these two variables are inversely related. It is suggested that using a small learning and a large amount of iterations will lead to a better out-of-sample performance</p></li>
+<li><p><code>interaction.depth</code> is the depth of weak learner of tree. Depth of 1 implies we do not consider the interaction term. This variable needs to be tuned using the validation error.</p></li>
+<li><p><code>n.minobsinnode</code> is the minimal observations in a leaf node.</p></li>
+<li><p><code>bag.fraction</code> is the proportion of training data used to grow the trees. Here we choose 1 since we have a small portfolio.</p></li>
+<li><p><code>train.fraction</code> indicates that the first proportion of rows are used as the train data and the rest are used as the validation data.</p></li>
+</ul>
+<p>Note that we tune the parameters <code>shrinkage, interaction.depth</code> by observing the changes in validation error.
+It turns out that <code>interaction.depth=1</code> leads to the minimal validation error and <code>shrinkage</code> does not affect the results too much.
+From Figure <a href="claims-frequency-modeling.html#fig:gbm-plot">6.11</a>, we see there is little improvement by the GBM.
+Car’s price and driver’s age has the largest two importance index indicating that we may do a better grouping of age.
+However, such pre-processing do not bring a much improve to the GLM.<br />
+The test error is <span class="math inline">\(1.0306\)</span> comparing with <span class="math inline">\(1.0306\)</span> from the GLM.</p>
+<div class="figure" style="text-align: center"><span id="fig:gbm-plot"></span>
+<img src="plots/5/gbm_error.png" alt="Calibration of gradient boosting model" width="40%" />
+<p class="caption">
+Figure 6.11: Calibration of gradient boosting model
+</p>
+</div>
+</div>
+<div id="xgboost" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> XGBoost</h3>
+<p>Similarly, we can apply the XGBoost to improve the GLM prediction. The R code is given as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="claims-frequency-modeling.html#cb2-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="claims-frequency-modeling.html#cb2-2"></a>bst&lt;-</span>
+<span id="cb2-3"><a href="claims-frequency-modeling.html#cb2-3"></a><span class="st">  </span><span class="kw">xgb.train</span>(</span>
+<span id="cb2-4"><a href="claims-frequency-modeling.html#cb2-4"></a>    <span class="dt">data =</span> dtrain,</span>
+<span id="cb2-5"><a href="claims-frequency-modeling.html#cb2-5"></a>    <span class="dt">watchlist =</span> <span class="kw">list</span>(<span class="dt">train =</span> dtrain, <span class="dt">test =</span> dvalid),</span>
+<span id="cb2-6"><a href="claims-frequency-modeling.html#cb2-6"></a>    <span class="dt">objective =</span> <span class="st">&quot;count:poisson&quot;</span>,</span>
+<span id="cb2-7"><a href="claims-frequency-modeling.html#cb2-7"></a>    <span class="dt">nrounds =</span> <span class="dv">1000</span>,</span>
+<span id="cb2-8"><a href="claims-frequency-modeling.html#cb2-8"></a>    <span class="dt">eta =</span> <span class="fl">0.001</span>,</span>
+<span id="cb2-9"><a href="claims-frequency-modeling.html#cb2-9"></a>    <span class="dt">max_depth =</span> <span class="dv">2</span>,</span>
+<span id="cb2-10"><a href="claims-frequency-modeling.html#cb2-10"></a>    <span class="dt">min_child_weight =</span> <span class="dv">100</span>,</span>
+<span id="cb2-11"><a href="claims-frequency-modeling.html#cb2-11"></a>    <span class="dt">subsample =</span> <span class="dv">1</span>,</span>
+<span id="cb2-12"><a href="claims-frequency-modeling.html#cb2-12"></a>    <span class="dt">early_stopping_rounds =</span> <span class="dv">5</span>,</span>
+<span id="cb2-13"><a href="claims-frequency-modeling.html#cb2-13"></a>    <span class="dt">nthread =</span> <span class="dv">4</span>,</span>
+<span id="cb2-14"><a href="claims-frequency-modeling.html#cb2-14"></a>    <span class="dt">verbose =</span> F</span>
+<span id="cb2-15"><a href="claims-frequency-modeling.html#cb2-15"></a>  ) </span>
+<span id="cb2-16"><a href="claims-frequency-modeling.html#cb2-16"></a>bst<span class="op">$</span>best_ntreelimit</span>
+<span id="cb2-17"><a href="claims-frequency-modeling.html#cb2-17"></a>bst<span class="op">$</span>best_msg</span></code></pre></div>
+<p>The code is self explained. And we add illustrations of important arguments:</p>
+<ul>
+<li><p><code>nrounds, eta, max_depth, min_child_weight, subsample</code> play the similar roles as <code>n.trees, shrinkage, interaction.depth, n.mnobsinnode, bag.fraction</code> in the GBM.</p></li>
+<li><p><code>early_stopping_rounds = 5</code> indicates that if the validation error does not improve for <span class="math inline">\(5\)</span> iterations the model will stop training.</p></li>
+</ul>
+<p>Again, there is no obvious improvement found by the XGBoost (test error of <span class="math inline">\(1.0308\)</span>).
+<strong>We conclude that</strong> the GLM can capture almost all the prediction power of the actuarial risk factors since our pre-processing of variables is appropriate and there is no obvious interaction effects. However, please note that our data only contains 1847 cars so we may not discover the potential non-linear effects and interaction effects based on such a small portfolio.</p>
+</div>
+</div>
+<div id="improved-glm-with-telematics-individual-trips" class="section level2">
+<h2><span class="header-section-number">6.4</span> Improved GLM with telematics individual trips</h2>
+<p>In this section, we apply the one dimensional convolutional neural networks (1D CNNs) to evaluate the risk associated with individual trips.
+One dimensional convolutional neural networks can learn the patterns from time series data.
+Another family of recurrent neural network including long short-term memory and gated recurrent unit can also be used to analyze time series data.
+Gao and Wuthrich (2019) have studied the usefulness of 1D CNNs for driver identification rather than risk evaluation of individual trips.</p>
+<p>Our proposed method include three steps:
+First, we calibrate a 1D CNN to classify trips of the selected archetypal drivers as either <strong>potential risky or potential safe</strong>.
+Second, we apply the calibrated 1D CNN to evaluate each trip of each driver and we call the sigmoid probability of the output neuron as the risk score of each trip.
+Third, we improve the fitted GLM for claims counts with the <strong>average risk score</strong>:
+<span class="math display">\[\ln \lambda(\boldsymbol{x})=  \ln {\lambda}^\text{(GLM)}(\boldsymbol{x})+  \ln {\lambda}^\text{(TEL)}(\boldsymbol{x}),\]</span>
+where the (logged) telematics modification factor
+<span class="math display">\[\ln {\lambda}^\text{(TEL)}(\boldsymbol{x})=  \beta_3+\beta_4\text{ave_risk_score}\]</span></p>
+<div id="selection-of-archetypal-drivers" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Selection of archetypal drivers</h3>
+<p>Our purpose is to improve the GLM claims frequency prediction using the individual trips risk scores.
+Ideally, the 1D CNNs should explain some variations in the residuals from the Poisson GLM. This motivates how we select the archetypal cars and label their trips.</p>
+<p>We calculate the deviance residuals of the Poisson GLM as follows:</p>
+<p><span class="math display">\[r_i=\text{sign}(N_i-e_i\hat{\lambda}^{\text{GLM}}(\boldsymbol{x}_i)) \sqrt{2e_i\hat{\lambda}^{\text{(GLM)}}(\boldsymbol{x}_i)-2N_i-2N_i \ln (e_i\hat{\lambda}^{\text{(GLM)}})+2N_i\ln N_i}.\]</span>
+We draw the histogram of <span class="math inline">\(r_i, i=1.\ldots,n\)</span> in Figure <a href="claims-frequency-modeling.html#fig:hist-r">6.12</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:hist-r"></span>
+<img src="plots/5/residual.png" alt="Histogram of deviance residuals" width="40%" />
+<p class="caption">
+Figure 6.12: Histogram of deviance residuals
+</p>
+</div>
+<p>We select 10 drivers with the largest residuals in the learning data set as archetypal risky drivers, and we label their 5000 trips as potential risky trips (coded as 1).
+We show their exposure, claims number, region, age, deviance residuals, and the GLM estimated claims frequency in Table <a href="claims-frequency-modeling.html#tab:ind-high">6.2</a>.</p>
+<table>
+<caption><span id="tab:ind-high">Table 6.2: </span>10 archetypal risky drivers</caption>
+<thead>
+<tr class="header">
+<th align="right">Earned_Years</th>
+<th align="right">Claim_Count</th>
+<th align="left">BRANCHNAME</th>
+<th align="right">AGE</th>
+<th align="right">Res_D</th>
+<th align="right">Freq_GLM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">3.1836</td>
+<td align="right">4</td>
+<td align="left">other_regions</td>
+<td align="right">33.5</td>
+<td align="right">7.7461</td>
+<td align="right">0.2070</td>
+</tr>
+<tr class="even">
+<td align="right">2.9096</td>
+<td align="right">4</td>
+<td align="left">hebei</td>
+<td align="right">28.0</td>
+<td align="right">8.8773</td>
+<td align="right">0.1917</td>
+</tr>
+<tr class="odd">
+<td align="right">2.0000</td>
+<td align="right">4</td>
+<td align="left">zhejiang</td>
+<td align="right">45.0</td>
+<td align="right">9.0390</td>
+<td align="right">0.2724</td>
+</tr>
+<tr class="even">
+<td align="right">2.7918</td>
+<td align="right">3</td>
+<td align="left">hebei</td>
+<td align="right">56.0</td>
+<td align="right">6.7977</td>
+<td align="right">0.1458</td>
+</tr>
+<tr class="odd">
+<td align="right">2.2055</td>
+<td align="right">4</td>
+<td align="left">zhejiang</td>
+<td align="right">29.0</td>
+<td align="right">7.7946</td>
+<td align="right">0.2966</td>
+</tr>
+<tr class="even">
+<td align="right">2.5288</td>
+<td align="right">3</td>
+<td align="left">hebei</td>
+<td align="right">50.0</td>
+<td align="right">8.3549</td>
+<td align="right">0.1200</td>
+</tr>
+<tr class="odd">
+<td align="right">3.0000</td>
+<td align="right">4</td>
+<td align="left">zhejiang</td>
+<td align="right">34.0</td>
+<td align="right">10.0270</td>
+<td align="right">0.1576</td>
+</tr>
+<tr class="even">
+<td align="right">1.0000</td>
+<td align="right">2</td>
+<td align="left">shanghai</td>
+<td align="right">40.0</td>
+<td align="right">5.2395</td>
+<td align="right">0.2218</td>
+</tr>
+<tr class="odd">
+<td align="right">2.9507</td>
+<td align="right">3</td>
+<td align="left">hebei</td>
+<td align="right">29.0</td>
+<td align="right">5.5946</td>
+<td align="right">0.1748</td>
+</tr>
+<tr class="even">
+<td align="right">2.0000</td>
+<td align="right">3</td>
+<td align="left">shanghai</td>
+<td align="right">36.0</td>
+<td align="right">6.4458</td>
+<td align="right">0.2179</td>
+</tr>
+</tbody>
+</table>
+<p>For the archetypal safe drivers, we select 10 drivers with no claim and the largest exposure in the learning data set. We label their 5000 trips as potential safe trips (coded as 0).
+We show their information in Table <a href="claims-frequency-modeling.html#tab:ind-low">6.3</a>.
+Note that we do not select drivers with the smallest residuals. Those drivers are predicted with high claims frequency but without claims.
+Those drivers can be potential risky drivers since even the claims frequency is high, the chance of making no claim is still high.
+<strong>Our experience show that if we chose drivers with the smallest residuals. We will not calibrate a useful CNN to evaluate the risk of individual trips.</strong>
+<!-- Indeed, for the archetypal risky drivers, we could also select those drivers who made the most claims per year. -->
+We denote the index set of the archetypal drivers by <span class="math inline">\(\mathcal{I}_{\text{sel}}\)</span>.</p>
+<table>
+<caption><span id="tab:ind-low">Table 6.3: </span>10 archetypal safe drivers</caption>
+<thead>
+<tr class="header">
+<th align="right">Earned_Years</th>
+<th align="right">Claim_Count</th>
+<th align="left">BRANCHNAME</th>
+<th align="right">AGE</th>
+<th align="right">Res_D</th>
+<th align="right">Freq_GLM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">3.4438</td>
+<td align="right">0</td>
+<td align="left">hebei</td>
+<td align="right">32.5</td>
+<td align="right">-1.4907</td>
+<td align="right">0.2164</td>
+</tr>
+<tr class="even">
+<td align="right">3.4795</td>
+<td align="right">0</td>
+<td align="left">hebei</td>
+<td align="right">39.5</td>
+<td align="right">-0.8265</td>
+<td align="right">0.1188</td>
+</tr>
+<tr class="odd">
+<td align="right">3.4658</td>
+<td align="right">0</td>
+<td align="left">zhejiang</td>
+<td align="right">29.5</td>
+<td align="right">-2.1375</td>
+<td align="right">0.3084</td>
+</tr>
+<tr class="even">
+<td align="right">3.4466</td>
+<td align="right">0</td>
+<td align="left">zhejiang</td>
+<td align="right">62.0</td>
+<td align="right">-1.6836</td>
+<td align="right">0.2442</td>
+</tr>
+<tr class="odd">
+<td align="right">3.4466</td>
+<td align="right">0</td>
+<td align="left">hebei</td>
+<td align="right">33.5</td>
+<td align="right">-0.7848</td>
+<td align="right">0.1139</td>
+</tr>
+<tr class="even">
+<td align="right">3.4329</td>
+<td align="right">0</td>
+<td align="left">shanghai</td>
+<td align="right">44.5</td>
+<td align="right">-1.5932</td>
+<td align="right">0.2321</td>
+</tr>
+<tr class="odd">
+<td align="right">3.4438</td>
+<td align="right">0</td>
+<td align="left">hebei</td>
+<td align="right">30.5</td>
+<td align="right">-1.2430</td>
+<td align="right">0.1805</td>
+</tr>
+<tr class="even">
+<td align="right">3.4795</td>
+<td align="right">0</td>
+<td align="left">hebei</td>
+<td align="right">35.5</td>
+<td align="right">-0.7124</td>
+<td align="right">0.1024</td>
+</tr>
+<tr class="odd">
+<td align="right">3.4274</td>
+<td align="right">0</td>
+<td align="left">hebei</td>
+<td align="right">43.5</td>
+<td align="right">-1.2207</td>
+<td align="right">0.1781</td>
+</tr>
+<tr class="even">
+<td align="right">3.4603</td>
+<td align="right">0</td>
+<td align="left">hebei</td>
+<td align="right">23.5</td>
+<td align="right">-0.9866</td>
+<td align="right">0.1426</td>
+</tr>
+</tbody>
+</table>
+<p>We add two additional telematics variables of squared acceleration rates <span class="math inline">\(a^2\)</span> and squared angle changes <span class="math inline">\(\Delta^2\)</span> to the time series of individual trips.
+We denotes the <span class="math inline">\(j\)</span>-th trip of driver <span class="math inline">\(i\in\mathcal{I}_\text{sel}\)</span> by <span class="math inline">\(z_{i,j}\in[-1,1]^{300\times 5}\)</span> for <span class="math inline">\(j=1,\ldots,500.\)</span>
+Note that we have normalized the telematics variables <span class="math inline">\(v, a, \Delta, a^2, \Delta^2\)</span>, using the min-max normalization.</p>
+<p>We split the trips of each driver <span class="math inline">\(i\)</span> into training data <span class="math inline">\((z_{i,j})_{j=1:300}\)</span>, the validation data <span class="math inline">\((z_{i,j})_{j=301:400}\)</span>, and the test data <span class="math inline">\((z_{i,j})_{j=401:500}\)</span>.<br />
+One may use the total trips of several risky drivers and safe drivers as as test data.
+<strong>Our experience shows that the neural network cannot be calibrated on this kind partition of data, i.e., the validation error cannot be reduced.</strong>
+The reason may be that some safe drivers may have many risky trips and vice versa.</p>
+</div>
+<div id="one-dimensional-convolutional-neural-network" class="section level3">
+<h3><span class="header-section-number">6.4.2</span> One dimensional convolutional neural network</h3>
+<p>We label the trips of the archetypal potential risky drivers as <span class="math inline">\(1\)</span> and those of the archetypal potential safe drivers as 0.
+We calibrate a 1D CNN <span class="math inline">\(\phi\)</span> to classify the trips of the selected archetypal drivers:</p>
+<p><span class="math display">\[\phi: [-1,1]^{300\times5}\rightarrow (0,1), ~~ z\mapsto\phi(z).\]</span></p>
+<p>We call the sigmoid probability of the output neuron <span class="math inline">\(\phi(z)\)</span> as the risk score of trip <span class="math inline">\(z\)</span>. If the output neuron <span class="math inline">\(\phi(z)\)</span> is close to 1, then this trip gets a higher risk score.
+The 1D CNN is constructed as follows:</p>
+<pre><code>Layer (type)                     Output Shape                  Param #     
+===========================================================================
+trips (InputLayer)               [(None, 300, 5)]              0           
+___________________________________________________________________________
+cov1 (Conv1D)                    (None, 294, 32)               1152         
+___________________________________________________________________________
+ave1 (AveragePooling1D)          (None, 58, 32)                0           
+___________________________________________________________________________
+cov2 (Conv1D)                    (None, 52, 16)                3600        
+___________________________________________________________________________
+ave2 (GlobalAveragePooling1D)    (None, 16)                    0           
+___________________________________________________________________________
+dropout (Dropout)                (None, 16)                    0           
+___________________________________________________________________________
+dense1 (Dense)                   (None, 8)                     136         
+___________________________________________________________________________
+dropout_1 (Dropout)              (None, 8)                     0           
+___________________________________________________________________________
+dense2 (Dense)                   (None, 1)                     9           
+===========================================================================
+Total params: 4,897
+Trainable params: 4,897
+Non-trainable params: 0
+___________________________________________________________________________</code></pre>
+<p>The calibration is shown in Figures <a href="claims-frequency-modeling.html#fig:cnn-loss">6.13</a> and <a href="claims-frequency-modeling.html#fig:cnn-acc">6.14</a>.
+We save the network weights which lead to the lowest validation loss.
+The validation accuracy is around <span class="math inline">\(70\%\)</span> and the test accuracy is at the same level.
+We plot the histogram of risk scores for test potential risky trips and for test potential safe trips in Figures @ref(fig:test_score). The test potential safe trips tend to have a lower risk scores than those riky ones.</p>
+<div class="figure" style="text-align: center"><span id="fig:cnn-loss"></span>
+<img src="plots/5/cnn_loss_bin.png" alt="Calibration of the CNN" width="40%" />
+<p class="caption">
+Figure 6.13: Calibration of the CNN
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:cnn-acc"></span>
+<img src="plots/5/cnn_acc_bin.png" alt="Calibration of the CNN" width="40%" />
+<p class="caption">
+Figure 6.14: Calibration of the CNN
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:test-score"></span>
+<img src="plots/5/cnn_test_score.png" alt="Calibration of the CNN" width="60%" />
+<p class="caption">
+Figure 6.15: Calibration of the CNN
+</p>
+</div>
+<p><strong>Remark</strong>: In the failed trials, we find that the hyperbolic tangent activation is better than the relu activation function and the average pooling is better than the max pooling.
+Including the squared acceleration rates and the squared direction changes would improve the prediction accuracy of 1D CNN.
+The disadvantage of 1D CNN is that it is a black box and we do not know how it performs the feature engineering.</p>
+</div>
+<div id="glm-with-trips-scores" class="section level3">
+<h3><span class="header-section-number">6.4.3</span> GLM with trips scores</h3>
+<p>We then use the calibrated CNN to evaluate at most 500 individual trips of each driver. We call the sigmoid probability of the output neuron as the risk score of trips.
+We calculate the average risk scores <span class="math inline">\(\text{ave_risk_score}\)</span> for each car.</p>
+<p>We investigate the predictive power of risk scores of trips for claims frequency.
+We employ the following improved GLM:
+<span class="math display">\[\begin{equation}
+\ln \lambda(\boldsymbol{x})=  \ln {\lambda}^\text{(GLM)}(\boldsymbol{x})+  \ln {\lambda}^\text{(TEL)}(\boldsymbol{x})=\ln {\lambda}^\text{(GLM)}(\boldsymbol{x})+  \beta_3+\beta_4\text{ave_risk_score}.
+\end{equation}\]</span>
+It turns out the test loss is <span class="math inline">\(1.0287\)</span> comparing with <span class="math inline">\(1.0306\)</span> for the GLM.</p>
+<p>The estimated telematics modification factor <span class="math inline">\(\lambda^{\text{(TEL)}}\)</span> is
+<span class="math display">\[\exp(\hat{\beta}_3+\hat{\beta}_4\text{ave_risk_score})=\exp(-0.6878+1.3712\times\text{ave_risk_score})\]</span>
+<strong>Our calculated risk scores are in <span class="math inline">\((0.1511,0.7837)\)</span>, so the modfication factor is in <span class="math inline">\((0.6184,1.4722)\)</span>.</strong>
+We plot the histogram of <strong>the telematics modification factor</strong> in Figure <a href="claims-frequency-modeling.html#fig:mod-factor">6.16</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:mod-factor"></span>
+<img src="plots/5/modification_factor.png" alt="Histogram of the telematics modification factors" width="50%" />
+<p class="caption">
+Figure 6.16: Histogram of the telematics modification factors
+</p>
+</div>
+<p><strong>Remarks:</strong>
+<strong>The key point is to select the archetypal drivers.</strong>
+We try several options and only this works for our data.
+For example, one may wonder to calibrate a CNN on all drivers trips to minimize the Poisson loss.
+This does not work for our data no matter using the individual trips or concatenated trips.
+We stress that our portfolio is small which is a limitation of this analysis.</p>
+</div>
+</div>
+<div id="discussions" class="section level2">
+<h2><span class="header-section-number">6.5</span> Discussions</h2>
+<p>In this section, we discuss the alternatives to the proposed method. <strong>Surprisingly, if we replace the 1D CNN by a logistic regression, we would obtain an equivalent good out-of-sample prediction.</strong></p>
+<div id="trips-classification-by-a-logistic-model" class="section level3">
+<h3><span class="header-section-number">6.5.1</span> Trips classification by a logistic model</h3>
+<p>We calculate the mean, median, minimum, maximum, quantile and standard deviation of the speed <span class="math inline">\(v\)</span>, acceleration <span class="math inline">\(a\)</span>, angle change <span class="math inline">\(\Delta\)</span>, squared acceleration <span class="math inline">\(a^2\)</span>, and squared angle change <span class="math inline">\(\Delta^2\)</span> for each trip.
+Based on those manually engineered features, we implement a logistic regression to classify the trips of the selected archetypal drivers.
+The test accuracy is <span class="math inline">\(66.7\%\)</span> while the test accuracy of the CNN is <span class="math inline">\(70.5\%\)</span>.
+We conclude that although the 1D CNN has a better out-of-sample prediction accuracy, the much simpler logistic regression also capture the major difference between risky trips and safe trips by using summary statistics.
+It seems that the chronological property in the telematics data do not play a very important role in the trips classification.</p>
+</div>
+<div id="competing-methods" class="section level3">
+<h3><span class="header-section-number">6.5.2</span> Competing methods</h3>
+<p>We consider two competing methods:</p>
+<ol style="list-style-type: decimal">
+<li><p>We calculate the summary statistics for each trip. Then we calculate the average of those summary statistics over all the trips for each driver. Finally, we use those averaged summary statistics as the covariates in the Poisson claims count regression.</p></li>
+<li><p>Following the same procedure as the proposed method, but replacing the 1D CNN by a logistic regression which is discussed in the previous section.
+This competing method uses manually feature engineering while our proposed method uses automatically feature engineering learned by the neural network.</p></li>
+</ol>
+<div id="alternative-1-telematics-summary-statistics" class="section level4">
+<h4><span class="header-section-number">6.5.2.1</span> Alternative 1: Telematics summary statistics</h4>
+<p>The test Poisson loss is <span class="math inline">\(1.0379\)</span> which is even worse than the GLM (<span class="math inline">\(1.0306\)</span>). However, this approach performs better than the other methods in other two data partitions; see the sensitivity section.</p>
+</div>
+<div id="alternative-2-risk-scoring-with-logistic-model" class="section level4">
+<h4><span class="header-section-number">6.5.2.2</span> Alternative 2: Risk scoring with logistic model</h4>
+<p>The test Poisson loss is <span class="math inline">\(1.0284\)</span> which is as good as the CNN method (<span class="math inline">\(1.0287\)</span>). Figure <a href="claims-frequency-modeling.html#fig:factor-vs">6.17</a> comapre the averaged risk scores from the logistic regression and the 1D CNN. The correlation between them is <span class="math inline">\(0.9181\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:factor-vs"></span>
+<img src="plots/5/modification_factor_competing.png" alt="Comparison of risk scores" width="50%" />
+<p class="caption">
+Figure 6.17: Comparison of risk scores
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="sensitivity-analysis-and-conclusions" class="section level2">
+<h2><span class="header-section-number">6.6</span> Sensitivity analysis and conclusions</h2>
+<p>Since our portfolio is very small, we conduct a sensitivity analysis to test the robustness of our results.
+Similar to cross-validation, we repeat the above analysis for 5 times and evaluate test Poisson loss on 5 mutually exclusive test data sets.
+The results are shown in Table <a href="claims-frequency-modeling.html#tab:sens">6.4</a>.</p>
+<table>
+<caption><span id="tab:sens">Table 6.4: </span>test Poisson loss for different data partitions</caption>
+<thead>
+<tr class="header">
+<th align="right">test_index</th>
+<th align="right">homo</th>
+<th align="right">glm</th>
+<th align="right">cnn</th>
+<th align="right">alt_1</th>
+<th align="right">alt_2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1.1095</td>
+<td align="right">1.0981</td>
+<td align="right">1.0933</td>
+<td align="right">1.0773</td>
+<td align="right">1.0961</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1.1003</td>
+<td align="right">1.0306</td>
+<td align="right">1.0287</td>
+<td align="right">1.0379</td>
+<td align="right">1.0284</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">1.0949</td>
+<td align="right">1.0641</td>
+<td align="right">1.0429</td>
+<td align="right">1.0190</td>
+<td align="right">1.0375</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">1.0952</td>
+<td align="right">1.0721</td>
+<td align="right">1.0656</td>
+<td align="right">1.0837</td>
+<td align="right">1.0624</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">1.0996</td>
+<td align="right">1.0318</td>
+<td align="right">1.0269</td>
+<td align="right">1.1082</td>
+<td align="right">1.0263</td>
+</tr>
+</tbody>
+</table>
+<p>We conclude with the following findings:</p>
+<ul>
+<li><p>Including the telematics car driving data can improve the predictive power of the claims frequency model.</p></li>
+<li><p>The two simpler alternatives have an equivalent good predictive performance as the 1D CNN approach.</p></li>
+<li><p>The advantage of the 1D CNN in the classification of archetypal trips seems having no effect on the claims frequency modeling based on our data.</p></li>
+</ul>
+<!-- Typically, increasing the number of archetypal drivers will increase the robustness of the results. -->
+<!-- If one cannot obtain a good classification during the CNN calibration, one should change the selected archetypal drivers. -->
+<!-- The reason is that we select the archetypal drivers based on  ``guess'' rather than that they are truly safe or risky drivers. -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="telematics-car-driving-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": "github"
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

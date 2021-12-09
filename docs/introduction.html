@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Introduction | Telematics car driving data analytics</title>
+  <meta name="description" content="The output format is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Introduction | Telematics car driving data analytics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="The output format is bookdown::gitbook." />
+  <meta name="github-repo" content="sxpyggy/Telematics-Analytics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Introduction | Telematics car driving data analytics" />
+  
+  <meta name="twitter:description" content="The output format is bookdown::gitbook." />
+  
+
+<meta name="author" content="Guangyuan Gao" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="overview.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Telematics car driving data analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>2</b> Overview</a><ul>
+<li class="chapter" data-level="2.1" data-path="overview.html"><a href="overview.html#vehicle-identification-number-data"><i class="fa fa-check"></i><b>2.1</b> Vehicle identification number data</a></li>
+<li class="chapter" data-level="2.2" data-path="overview.html"><a href="overview.html#policy-data"><i class="fa fa-check"></i><b>2.2</b> Policy data</a></li>
+<li class="chapter" data-level="2.3" data-path="overview.html"><a href="overview.html#claim-data"><i class="fa fa-check"></i><b>2.3</b> Claim data</a></li>
+<li class="chapter" data-level="2.4" data-path="overview.html"><a href="overview.html#telematics-data"><i class="fa fa-check"></i><b>2.4</b> Telematics data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html"><i class="fa fa-check"></i><b>3</b> Compulsory third party liability policies</a><ul>
+<li class="chapter" data-level="3.1" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#data-cleaning"><i class="fa fa-check"></i><b>3.1</b> Data cleaning</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#identification-variables"><i class="fa fa-check"></i><b>3.1.1</b> Identification variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#time"><i class="fa fa-check"></i><b>3.1.2</b> Time</a></li>
+<li class="chapter" data-level="3.1.3" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#policy-duration"><i class="fa fa-check"></i><b>3.1.3</b> Policy duration</a></li>
+<li class="chapter" data-level="3.1.4" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#car-features"><i class="fa fa-check"></i><b>3.1.4</b> Car features</a></li>
+<li class="chapter" data-level="3.1.5" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#driver-features"><i class="fa fa-check"></i><b>3.1.5</b> Driver features</a></li>
+<li class="chapter" data-level="3.1.6" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#experience-rating-factors"><i class="fa fa-check"></i><b>3.1.6</b> Experience rating factors</a></li>
+<li class="chapter" data-level="3.1.7" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#other-policy-features"><i class="fa fa-check"></i><b>3.1.7</b> Other policy features</a></li>
+<li class="chapter" data-level="3.1.8" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#claims-features"><i class="fa fa-check"></i><b>3.1.8</b> Claims features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="compulsory-third-party-liability-policies.html"><a href="compulsory-third-party-liability-policies.html#policies-aggregation-w.r.t-cars"><i class="fa fa-check"></i><b>3.2</b> Policies aggregation w.r.t cars</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="commercial-policies.html"><a href="commercial-policies.html"><i class="fa fa-check"></i><b>4</b> Commercial policies</a><ul>
+<li class="chapter" data-level="4.1" data-path="commercial-policies.html"><a href="commercial-policies.html#data-cleaning-1"><i class="fa fa-check"></i><b>4.1</b> Data cleaning</a></li>
+<li class="chapter" data-level="4.2" data-path="commercial-policies.html"><a href="commercial-policies.html#comparison-of-the-7-coverages"><i class="fa fa-check"></i><b>4.2</b> Comparison of the 7 coverages</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html"><i class="fa fa-check"></i><b>5</b> Telematics car driving data</a><ul>
+<li class="chapter" data-level="5.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#telematics-variables"><i class="fa fa-check"></i><b>5.1</b> Telematics variables</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#field-mask"><i class="fa fa-check"></i><b>5.1.1</b> Field mask</a></li>
+<li class="chapter" data-level="5.1.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#vehicle-identification-variables"><i class="fa fa-check"></i><b>5.1.2</b> Vehicle identification variables</a></li>
+<li class="chapter" data-level="5.1.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#time-1"><i class="fa fa-check"></i><b>5.1.3</b> Time</a></li>
+<li class="chapter" data-level="5.1.4" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#gps-variables"><i class="fa fa-check"></i><b>5.1.4</b> GPS variables</a></li>
+<li class="chapter" data-level="5.1.5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#instrument-panel-variables"><i class="fa fa-check"></i><b>5.1.5</b> Instrument panel variables</a></li>
+<li class="chapter" data-level="5.1.6" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#accelerometer-variables"><i class="fa fa-check"></i><b>5.1.6</b> Accelerometer variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#telematics-data-cleaning"><i class="fa fa-check"></i><b>5.2</b> Telematics data cleaning</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#original-telematics-data"><i class="fa fa-check"></i><b>5.2.1</b> Original telematics data</a></li>
+<li class="chapter" data-level="5.2.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#data-imputation"><i class="fa fa-check"></i><b>5.2.2</b> Data imputation</a></li>
+<li class="chapter" data-level="5.2.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#derived-acceleration-and-angle-change"><i class="fa fa-check"></i><b>5.2.3</b> Derived acceleration and angle change</a></li>
+<li class="chapter" data-level="5.2.4" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#selection-of-telematics-variables"><i class="fa fa-check"></i><b>5.2.4</b> Selection of telematics variables</a></li>
+<li class="chapter" data-level="5.2.5" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#saved-telematics-variables"><i class="fa fa-check"></i><b>5.2.5</b> Saved telematics variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#three-formats-of-telematics-data"><i class="fa fa-check"></i><b>5.3</b> Three formats of telematics data</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#time-series-of-individual-trips"><i class="fa fa-check"></i><b>5.3.1</b> Time series of individual trips</a></li>
+<li class="chapter" data-level="5.3.2" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#summary-statistics-of-telematics-variables"><i class="fa fa-check"></i><b>5.3.2</b> Summary statistics of telematics variables</a></li>
+<li class="chapter" data-level="5.3.3" data-path="telematics-car-driving-data.html"><a href="telematics-car-driving-data.html#heatmaps"><i class="fa fa-check"></i><b>5.3.3</b> Heatmaps</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html"><i class="fa fa-check"></i><b>6</b> Claims frequency modeling</a><ul>
+<li class="chapter" data-level="6.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#data-preprocess"><i class="fa fa-check"></i><b>6.1</b> Data preprocess</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#variable-preprocess"><i class="fa fa-check"></i><b>6.1.1</b> Variable preprocess</a></li>
+<li class="chapter" data-level="6.1.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#data-partition"><i class="fa fa-check"></i><b>6.1.2</b> Data partition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalized-linear-model-for-claim-counts"><i class="fa fa-check"></i><b>6.2</b> Generalized linear model for claim counts</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#poisson-deviance-loss-function"><i class="fa fa-check"></i><b>6.2.1</b> Poisson deviance loss function</a></li>
+<li class="chapter" data-level="6.2.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalizd-linear-models"><i class="fa fa-check"></i><b>6.2.2</b> Generalizd linear models</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#improved-glm-with-boosting-methods"><i class="fa fa-check"></i><b>6.3</b> Improved GLM with boosting methods</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#generalized-boosted-regression-modeling"><i class="fa fa-check"></i><b>6.3.1</b> Generalized boosted regression modeling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#xgboost"><i class="fa fa-check"></i><b>6.3.2</b> XGBoost</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#improved-glm-with-telematics-individual-trips"><i class="fa fa-check"></i><b>6.4</b> Improved GLM with telematics individual trips</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#selection-of-archetypal-drivers"><i class="fa fa-check"></i><b>6.4.1</b> Selection of archetypal drivers</a></li>
+<li class="chapter" data-level="6.4.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#one-dimensional-convolutional-neural-network"><i class="fa fa-check"></i><b>6.4.2</b> One dimensional convolutional neural network</a></li>
+<li class="chapter" data-level="6.4.3" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#glm-with-trips-scores"><i class="fa fa-check"></i><b>6.4.3</b> GLM with trips scores</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#discussions"><i class="fa fa-check"></i><b>6.5</b> Discussions</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#trips-classification-by-a-logistic-model"><i class="fa fa-check"></i><b>6.5.1</b> Trips classification by a logistic model</a></li>
+<li class="chapter" data-level="6.5.2" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#competing-methods"><i class="fa fa-check"></i><b>6.5.2</b> Competing methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="claims-frequency-modeling.html"><a href="claims-frequency-modeling.html#sensitivity-analysis-and-conclusions"><i class="fa fa-check"></i><b>6.6</b> Sensitivity analysis and conclusions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/sxpyggy/Telematics-Analytics" target="blank">GitHub repo</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Telematics car driving data analytics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Introduction</h1>
+<p><em>Guangyuan Gao, Yanlin Shi, He Wang</em></p>
+<p>With the advancements of telematics technology, insurers can collect detailed car driving information. Traditionally, insurers use classical actuarial risk factors to classify policyholders and charge different premiums for different risk groups.
+Telematics car driving data is a very personalized data which encodes driving differences not contained in classical social-demographic risk factors such as regions and ages.
+For example, some young drivers may have a cautious driving style, while some matured drivers may still have a wild and aggressive driving behavior.</p>
+<p>In this project, we explore first steps on how such information can be learned from telematics car driving data.
+Our ultimate goal is to improve auto risk classification models by using telematics car driving data.</p>
+<p>Although there are concerns with using personalized data and algorithmic prediction (Mahapatra, 2019; Cevolini and Esposito, 2020), we prefer the statement by Cather (2020) that incorporating telematics data into auto insurance risk classification systems would “minimize insurance discrimination and increase cream skimming adverse selection”.</p>
+<p>Telematics car driving data analysis is far from being trivial because the data comes with all its challenges such as big data (we typically have TBs of data that needs to be processed), data error, etc.
+According to the current actuarial literature, among others, there are three options to learn from telematics car driving data:
+(a) Weidner et al. (2016, 2017) extract covariates from time series of telematics data using discrete Fourier transforms;
+(b) Huang and Meng (2019), Paefgen et al. (2014) and Verbelen et al. (2018) calculate summary statistics of telematics data;
+(c) Gao et al. (2020) apply convolutional neural networks to learn patterns in speed-acceleration heatmaps. Those papers research on driving styles.</p>
+<p>Another stream of literature study risk exposure of driving distances or time exposures; see Ayuso et al. (2016a,b), Boucher et al. (2017), and Lemaire et al. (2016). Telematics data is a posterior experience and Denuit et al. (2019) propose a credibility model to incorporate the posterior information of driving behavior. Guillen et al. (2020) study the association of telematics car driving data with near-miss events such as cornering, braking, and accelerating. Geyer et al. (2020) study the effect of driving behavior on risk and insurance selection. Richman (2020) discuss possible approaches to analyze telematics car driving data.</p>
+<p>Our data is collected by on-board diagnostics (OBD) systems rather than smartphones. There are several works on smartphone-based telematics in the IEEE Transactions journals. Wahlström et al. (2017) summarize researches on smartphone-based vehicle telematics such as vehicle navigation, driver classification, road condition monitoring. Wahlström et al. (2018) study fusion of OBD and GNSS measurements of speed. Wahlström et al. (2015) detect dangerous cornering using GNSS data.</p>
+<p>The qualities of the IEEE conference papers on telematics car driving data are quite mixed. Among others, Savelonas et al. (2020), Girma et al. (2019) and Carvalho et al. (2020) apply recurrent neural networks to identify drivers or to learn different driving behaviors such as normal, moderate, aggressive, etc.</p>
+<p>In transportation field, Joubert et al. (2016), Ma et al. (2018), and Hu et al. (2019) study driving behaviors and find certain driving behaviors are more related to at-fault accidents.
+They use both telematics data and contextual data such as road conditions, traffic flow, speed limits.
+Ho et al. (2014), Hung et al. (2007), Kamble et al. (2009) study telematics data and driving cycles to understand vehicular emissions, energy consumption and impacts on traffic in different cities of the world.</p>
+<p>According to the current literature, we list two public telematics car driving data sets: naturalistic driving study dataset and UAH-DriveSet (Romera, 2016). Some of the above literature is based on the two data sets. Unfortunately, our telematics data is not publicly available.</p>
+<!-- Spectral features -->
+<p><strong>References</strong></p>
+<p>Ayuso, M., Guillen, M., Pérez-Marín, A.M. (2016a).
+Telematics and gender discrimination: Some usage-based evidence on whether men’s risk of accidents differs from women’s.
+<em>Risks</em> <strong>4/2</strong>, article 10.</p>
+<p>Ayuso, M., Guillen, M., Pérez-Marín, A.M. (2016b).
+Using GPS data to analyse the distance traveled to the first accident at fault in pay-as-you-drive insurance.
+<em>Transportation Research Part C: Emerging Technologies</em> <strong>68</strong>, 160-167.</p>
+<p>Boucher, J.-P., Côté, S., Guillen, M. (2017).
+Exposure as duration and distance in telematics motor insurance using generalized additive models.
+<em>Risks</em> <strong>5/4</strong>, article 54.</p>
+<p>Carvalho, E. (2017). Exploiting the use of recurrent neural networks for driver behavior profiling. <em>2017 International Joint Conference on Neural Networks</em>, 3016-3021.</p>
+<p>Cather, D.A. (2020). Reconsidering insurance discrimination and adverse selection in an era of data analytics. <em>Geneva Papers on Risk and Insurance - Issues and Practice</em> <strong>45</strong>, 426–456.</p>
+<p>Cevolini, A., Esposito, E. (2020). From pool to profile: Social consequences of algorithmic prediction in insurance. <em>Big Data and Society</em> <strong>7/2</strong>.</p>
+<!-- Chollet, F., Allaire, J.J. (2018). *Deep Learning with R*. Manning Publication.  -->
+<p>Denuit, M., Guillen, M., Trufin, J. (2019).
+Multivariate credibility modelling for usage-based motor insurance pricing with behavioural data. <em>Annals of Actuarial Science</em> <strong>13/2</strong>, 378-399.</p>
+<!-- Esteves-Booth, A., Muneer, T., Kirby, H., Kubie, J., Hunter, J. (2001). -->
+<!-- The measurement of vehicular driving cycle within the city of Edinburgh. -->
+<!-- {\it Transportation Research Part D: Transport and Environment} {\bf 6/3}, 209-220. -->
+<!-- Gao, G., Meng, S. and W\"uthrich, M. V. (2019). Claims frequency modeling using telematics car driving data.  -->
+<!-- {\it Scandinavian Actuarial Journal} {\bf 2019/2}, 143-162. -->
+<!-- Ferrario, A.,  Noll, A., W\"uthrich, M. V. (2018). Insights from inside neural networks. {\it SSRN}, abstract id: 3226852. -->
+<!-- Gao, G.,  W\"uthrich, M. V.(2018). Feature extraction from telematics car driving heatmaps.  -->
+<!-- {\it European Actuarial Journal} {\bf 8/2}, 383-406. -->
+<!-- Gao, G., W\"uthrich, M. V. (2019). Convolutional neural network classification of telematics car driving data.  -->
+<!-- {\it Risks} {\bf 7/1}, article 6. -->
+<p>Gao, G., Wang, H, Wüthrich, M.V. (2020). Boosting Poisson regression models with telematics car driving data. <em>SSRN</em> ID: 3596034.</p>
+<p>Geyer, A., Kremslehner, D., Muermann, A. (2020). Asymmetric information in automobile insurance: Evidence from driving behavior. <em>Journal of Risk and Insurance</em> <strong>87/4</strong>, 969-995.</p>
+<!-- Goodfellow, I., Bengio, Y., Courville, A. (2016). -->
+<!-- *Deep Learning*. MIT Press. -->
+<p>Girma, A., Yan, X., Homaifar, A. (2019). Driver identification
+based on vehicle telematics data using LSTM-recurrent neural network.
+<em>2019 IEEE 31st International Conference on Tools with Artificial Intelligence</em>, 894-902.</p>
+<p>Guillen, M., Nielsen, J.P., Pérez-Marín, A.M., Elpidorou, V. (2020).
+Can automobile insurance telematics predict the risk of near-miss events?
+<em>North American Actuarial Journal</em> <strong>24/1</strong>, 141-152.</p>
+<!-- Henckaerts, R., Antonio, K., Clijsters, M., Verbelen, R. (2018). A data driven binning strategy for the construction of insurance tariff classes.  -->
+<!-- *Scandinavian Actuarial Journal* **2018/8**, 681-705.  -->
+<!-- Henckaerts, R., Côté, M.-P., Antonio, K., Verbelen, R. (2020). Boosting insights in insurance tariff plans with tree-based machine learning.  -->
+<!-- *North American Actuarial Journal*. -->
+<p>Ho, S.-H., Wong, Y.-D., Chang, V. W.-C. (2014).
+Developing Singapore driving cycle for passenger cars to estimate fuel consumption and vehicular emissions.
+<em>Atmospheric Environment</em> <strong>97</strong>, 353-362.</p>
+<p>Hu, X., Zhu, X., Ma, Y.-L., Chiu, Y.-C., Tang, Q. (2019).
+Advancing usage-based insurance – a contextual driving risk modelling and analysis approach.
+<em>IET Intelligent Transport Systems</em> <strong>13/3</strong>, 453-460.</p>
+<p>Huang, Y., Meng, S. (2019). Automobile insurance classification ratemaking based on telematics driving data.
+<em>Decision Support Systems</em> <strong>127</strong>.</p>
+<p>Hung, W.T., Tong, H.Y., Lee, C.P., Ha, K., Pao, L.Y. (2007).
+Development of practical driving cycle construction methodology: a case study in Hong Kong.
+<em>Transportation Research Part D: Transport and Environment</em> <strong>12/2</strong>, 115-128.</p>
+<p>Joubert, J. W., de Beer, D., de Koker, N. (2016).
+Combining accelerometer data and contextual variables to evaluate the risk of driver behaviour.
+<em>Transportation Research Part F: Traffic Psychology and Behaviour</em> <strong>41/A</strong>, 80-96.</p>
+<p>Kamble, S.H., Mathew, T.V., Sharma, G.K. (2009).
+Development of real-world driving cycle: case study of Pune, India.
+<em>Transportation Research Part D: Transport and Environment</em> <strong>14/2</strong>, 132-140.</p>
+<p>Lemaire, J., Park, S.C., Wang, K. (2016).
+The use of annual mileage as a rating variable.
+<em>ASTIN Bulletin</em> <strong>46</strong>, 39-69.</p>
+<p>Ma, Y.-L., Zhu, X., Hu, X., Chiu, Y.-C. (2018). The use of context-sensitive insurance telematics data in auto insurance rate making.
+<em>Transportation Research Part A: Policy and Practice</em>
+<strong>113</strong>, 243-258.</p>
+<p>Mahapatra, A. (2019). Privacy: A growing risk in the insurance industry. <em>Creative Components</em> 410.</p>
+<p>Paefgen, J., Staake, T., Fleisch, E. (2014).
+Multivariate exposure modeling of accident risk: Insights from pay-as-you-drive insurance data.
+<em>Transportation Research Part A: Policy and Practice</em> <strong>61</strong>, 27-40.</p>
+<p>Richman, R. (2020).
+AI in actuarial science - a review of recent advances.
+<em>Annals of Actuarial Science</em>.</p>
+<p>Romera, E., Bergasa, L.M., Arroyo, R. (2016). Need data for driver behaviour analysis? Presenting the public UAH-DriveSet. <em>2016 IEEE 19th International Conference on Intelligent Transportation Systems</em>, 387-392.</p>
+<p>Savelonas, M. et al. (2020). Hybrid time-series representation for the classification of driving behaviour. <em>2020 15th International Workshop on Semantic and Social Media Adaptation and Personalization</em>, 1-6.</p>
+<p>Verbelen, R., Antonio, K., Claeskens, G. (2018). Unraveling the predictive power of telematics data in car insurance pricing.
+<em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em> <strong>67</strong>, 1275-1304.</p>
+<p>Wahlström, J., Skog, I., Händel, P. (2017).
+Smartphone-Based Vehicle Telematics:A Ten-Year Anniversary.
+<em>IEEE Transactions on Intelligent Transportation Systems</em> <strong>18/10</strong>, 2802-2825.</p>
+<p>Wahlström, J., Skog, I., Händel, P. (2015).
+Detection of Dangerous Cornering inGNSS-Data-Driven Insurance Telematics.
+<em>IEEE Transactions on Intelligent Transportation Systems</em> <strong>16/6</strong>, 3073-3083.</p>
+<p>Wahlström, J., Skog, I., Nordström, R.L., Händel, P. (2018).
+Fusion of OBD and GNSS Measurements of Speed. <em>IEEE Transactions on Instrumentation and Measurement</em> <strong>67/7</strong>, 1659-1667.</p>
+<p>Weidner, W., Transchel, F.W.G., Weidner, R. (2016).
+Classification of scale-sensitive telematic observables for riskindividual pricing.
+<em>European Actuarial Journal</em> <strong>6/1</strong>, 3-24.</p>
+<p>Weidner, W., Transchel, F.W.G., Weidner, R. (2017).
+Telematic driving profile classification in car insurance pricing.
+<em>Annals of Actuarial Science</em> <strong>11/2</strong>, 213-236.</p>
+<!-- Wiatowski, T., Bölcskei, H. (2018). -->
+<!-- A mathematical theory of deep convolutional neural networks for feature extraction. -->
+<!-- *IEEE Transactions on Information Theory* **64/3**, 1845-1866. -->
+<!-- Wüthrich, M.V., Merz, M. (2019). Editorial: Yes, we CANN!  -->
+<!-- *ASTIN Bulletin* **49/1**, 1-3.  -->
+<!-- Yang, Y.,  Qian, W., Zou, H. (2018).  -->
+<!-- Insurance premium prediction via gradient tree-boosted Tweedie compound Poisson models.  -->
+<!-- *Journal of Business and Economic Statistics* **36/3**, 456-470. -->
+<!-- \bibitem{Zhang1} -->
+<!-- Zhang, W., Tanida, J., Itoh, K., Ichioka, Y. (1988). -->
+<!-- Shift invariant pattern recognition neural network and its optical architecture. -->
+<!-- {\it Proceedings of the Annual Conference of the Japan Society of Applied Physics}, 6p-M-14, 734. -->
+<!-- \bibitem{Zhang2} -->
+<!-- Zhang, W., Itoh, K., Tanida, J., Ichioka, Y. (1990). -->
+<!-- Parallel distributed processing model with local space-invariant interconnections and its optical architecture. -->
+<!-- {\it Applied Physics}  {\bf 29/32}, 4790-4797. -->
+<!-- Zhu, X., Yuan, Y., Hu, X., Chiu, Y.-C., Ma, Y.-L. (2017). A Bayesian Network model for contextual versus non-contextual driving behavior assessment. -->
+<!-- *Transportation Research Part C: Emerging Technologies* -->
+<!-- **81**, 172-187. -->
+
+<!-- # (PART) PREPROCESS {-} -->
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="overview.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": "github"
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
