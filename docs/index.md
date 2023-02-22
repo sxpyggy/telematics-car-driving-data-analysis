@@ -15,7 +15,7 @@ editor_options:
 ---
 # Preface {-}
 
-This work is supported by the SOA research grant.
+This work is supported by the National Natural Science Foundation of China (71901207) and the SOA research grant.
 
 - The aggregated compulsory third party liability data contains $2119$ cars with $4804$ years-at-risk and $1059$ claims. The empirical claims frequency is $0.22$. The claims frequency data of cars is saved as `car_compulsory.csv`.
 
